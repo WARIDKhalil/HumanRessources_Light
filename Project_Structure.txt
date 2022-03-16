@@ -1,0 +1,81 @@
+C:.
+|   appsettings.Development.json
+|   appsettings.json
+|   HumanRessources_Light_API.csproj
+|   HumanRessources_Light_API.csproj.user
+|   Program.cs
+|   Project_Structure.txt
+|   Startup.cs
+|   
+|                           
++---Controllers
+|       AccountController.cs
+|       AdministratorController.cs
+|       AuthentificationController.cs
+|       DepartmentController.cs
+|       EmployeeController.cs
+|       RegistrationController.cs
+|       RoleController.cs
+|       
++---DbConfiguration
+|       MongoDbContext.cs
+|       
++---Models
+|       Account.cs
+|       Administrator.cs
+|       Department.cs
+|       Employee.cs
+|       Person.cs
+|       Role.cs
+|       
+|                   
++---Properties
+|       launchSettings.json
+|       
++---Repositories
+|       AccountRepository.cs
+|       AdministratorRepository.cs
+|       DepartmentRepository.cs
+|       EmployeeRepository.cs
+|       MongoRepository.cs
+|       RoleRepository.cs
+|       
++---Requests
+|       SignInRequest.cs
+|       SignUpRequest.cs
+|       
++---Responses
+|       SignInResponse.cs
+|       
++---Services
+|       AccountService.cs
+|       AdministratorService.cs
+|       AuthentificationService.cs
+|       DepartmentService.cs
+|       EmployeeService.cs
+|       RegistrationService.cs
+|       RoleService.cs
+|       
+\---Shared
+    |   IBaseEntity.cs
+    |   JwtHelper.cs
+    |   PasswordHandler.cs
+    |   RolesEnumeration.cs
+    |   
+    +---Controllers
+    |       GenericCRUDController.cs
+    |       
+    +---Repositories
+    |       IRepository.cs
+    |       
+    +---Responses
+    |       IResponse.cs
+    |       
+    +---Services
+    |       GenericService.cs
+    |       IGenericService.cs
+    |       
+    \---Settings
+            DbSettings.cs
+            IDbContext.cs
+            
