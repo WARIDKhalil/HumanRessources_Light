@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
 
 namespace HumanRessources_Light_API
 {
@@ -75,6 +76,23 @@ namespace HumanRessources_Light_API
 
             // Injecting the controllers
             services.AddControllers();
+
+            // Adding the swagger
+            services.AddSwaggerGen(_ =>
+            {
+                _.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Human Ressources Light API",
+                    Version = "v1",
+                    Description = "Light implementation of a HR system",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "WARID Khalil",
+                        Email = "khalil.warid@gmail.com",
+                        Url = new Uri("https://github.com/WARIDKhalil/HumanRessources_Light"),
+                    },
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,6 +102,19 @@ namespace HumanRessources_Light_API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Human Ressources Light API V1");
+
+                // To serve SwaggerUI at application's root page, set the RoutePrefix property to an empty string.
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
